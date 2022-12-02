@@ -7,8 +7,9 @@
         "start": "ts-node ./Training/day2/day2.ts",
         "format:check": "prettier --check .",
         "format:write": "prettier --write .",
-        "day2": "ts-node ./Training/day2/day2.ts",
+        "day2-2020": "ts-node ./Training/day2/day2.ts",
         "day1": "ts-node ./2022/day1/day1.ts",
+        "day2": "ts-node ./2022/day2/day2.ts",
         "type": "module"
     },
     "devDependencies": {
