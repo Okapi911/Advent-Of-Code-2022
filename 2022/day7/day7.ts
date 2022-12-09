@@ -1,5 +1,7 @@
 import * as fs from 'fs';
 
+console.time('oui');
+
 let tabl: string[] = fs.readFileSync('./2022/day7/input7.in', 'utf-8').split('\n$ ');
 tabl.splice(0, 1);
 
@@ -17,7 +19,11 @@ let tablPrettyCdLs = tabl.map((value, index) => {
 
 // PART 1
 
-var dicoOfLightDir: any = { '/': 0 };
+type dictionary = {
+    [key: string]: number;
+};
+
+var dicoOfLightDir: dictionary = { '/': 0 };
 let path: string[] = ['/'];
 let dirSet: Set<string> = new Set('/');
 
@@ -70,3 +76,5 @@ function checkAndReturn(value: string): void {
     }
 }
 console.log(result2);
+
+console.timeEnd('oui');
