@@ -21,6 +21,7 @@
         "day11": "ts-node ./2022/day11/day11.ts",
         "day12": "ts-node ./2022/day12/day12.ts",
         "day13": "ts-node ./2022/day13/day13.ts",
+        "day14": "ts-node ./2022/day14/day14.ts",
         "type": "module"
     },
     "devDependencies": {
