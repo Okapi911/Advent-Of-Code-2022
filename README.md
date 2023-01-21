@@ -13,21 +13,21 @@ Pour afficher une solution sur votre ordinateur, il vout suffit d'exécuter la c
 
 -   [Ma solution](./2022/day1/day1.ts)
 
--   Exemple d'entrée :
-
-```
-1000
-2000
-3000
-
-4000
-
-5000
-6000
-```
-
 -   L'objectif de la première partie du problème est de déterminer quel elfe a le plus de rations en sommant les éléments séparés par un unique retour à la ligne. Ce problème peut être résolu rapidement dès lors qu'un bon formattage a été effectué, néanmoins cela m'a pris du temps pour maîtriser les fonctions et méthodes de javascript permettant ce formattage : ici split et deux maps imbriqués, l'un appelant la fonction Number sur tous les éléments. Dès lors, on parcourt linéairement le tableau des elfes en calculant la somme des rations et en updatant si nécessaire la valeur du maximum. C'était ma première utilisation de reduce pour appliquer une fonction un peu plus développée qu'un retour immédiat.
 
 -   Pour la seconde partie du problème, c'est désormais les trois rations les plus élevées qui nous intéressent. Afin de m'essayer à différents outils de typescript, j'ai proposé 3 solutions de complexités différentes qui pourraient s'avérer plus ou moins utile si on cherchait désormais plus que 3 rations élevées. La première m'a permis de comprendre la méthode sort en mettant en place un tri rapide. La seconde m'a permis de réviser la formulation de conditions logiques en typescript, ici pour des blocs if. Enfin la troisième m'a permis de m'essayer à la manipulation de listes avec les outils splice et push. Dans l'ensemble ce premier jour a été très formatteur, et m'a donné la plupart des outils utilisés tout au long de l'aventure.
 
 ---
+
+## **_--- [Day 02: "Rock Paper Scissors"](https://adventofcode.com/2022/day/2) ---_**
+
+-   [Ma solution](./2022/day2/day2.ts)
+
+-   Utilisation d'appels de fonctions pour simplifier le plus possible les reduce utilisés pour chaque partie.
+-   Découverte de string.charCodeAt qui donne le code ASCII du n ème caractère d'une chaîne, ce qui sera très utile pour le traitement de plusieurs autres problèmes. L'utilisation de cette méthode m'a également permis de réétudier la numérotation ASCII pour retenir les codes les plus notables. ('a' : 97 ; 'A' : 65 ; ' ' : 32 ; '.' : 46 ; '\n' : 10)
+-   Utilisation de l'opérateur % pour le reste de la division euclidienne. Je note qu'en javascript un reste négatif est renvoyé si le dividende est négatif, il faut donc ajuster le code pour soit raisonner uniquement en terme de somme de termes positifs (par exemple pour passer de 2 à 1 mod 4 sans prendre de risque il vaut mieux ajouter 3 qu'ôter 1) soit sommer le résultat avec le diviseur après l'opérateur (pour passer de 0 à 3 par pas négatif :  (0-1) % 4 + 4)
+
+---
+
+## **_--- Jours 3 à 25 : Work In Progress, le ReadMe sera finalisé avant le samedi 21 janvier midi ---_**
+
