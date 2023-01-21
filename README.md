@@ -29,5 +29,36 @@ Pour afficher une solution sur votre ordinateur, il vout suffit d'exécuter la c
 
 ---
 
-## **_--- Jours 3 à 25 : Work In Progress, le ReadMe sera finalisé avant le samedi 21 janvier midi ---_**
+## **_--- [Day 03: "Rucksack Reorganization"](https://adventofcode.com/2022/day/3) ---_**
+
+-   [Ma solution](./2022/day3/day3.ts)
+
+-   Première utilisation de la méthode Array.filter qui permet de ne conserver que les éléments vérifiant une condition donnée.
+-   Découverte par inadvertance de la méthode slice quand je voulais en fait utiliser splice. slice permet de sélectionner et copier une section d'un array dans un autre, mais ne réalise pas de suppression dans l'array initial pour cela contrairement à splice.
+-   Utilisation de Array.includes qui fonctionne très bien pour des valeurs numériques : l'objectif est de vérifier si une valeur donnée est dans un array à partir d'une certaine position.
+-   Utilisation d'une boucle for pour travailler sur une range d'entiers consécutifs. J'ai hésité à créer cette range avec un Array.from pour éviter for et privilégier un map d'array.
+
+---
+
+## **_--- [Day 04: "Camp Cleanup"](https://adventofcode.com/2022/day/4) ---_**
+
+-   [Ma solution](./2022/day4/day4.ts)
+
+-   Meilleure familiarisation avec le formattage pour mettre en forme les données : il faut réaliser 3 splits dans le bon ordre en utilisant des map imbriqués.
+-   De même, écriture de formules logiques un peu plus longues pour obtenir les booléens attestant ou non du respet d'une condition.
+
+---
+
+## **_--- [Day 05: "Supply Stacks"](https://adventofcode.com/2022/day/5) ---_**
+
+-   [Ma solution](./2022/day5/day5.ts)
+
+-   Forattage bien plus compliqué que pour les problèmes précédents : le bloc supérieur correspond à des piles de lettres se lisant en colonne (la partie inférieure reste classique, on split sur les mots clés et on rétablit les nombres). Dans le cadre de ce formattage, utilisation de Array.match pour reconnaître des paternes (m'a permis de réétudier la formulation d'expressions régulières) et de replace pour faire disparaître des ponctuations non voulues en évitant des split.
+-   Première utilisation volontaire de slice qui se maîtrise rapidement comme j'avais déjà acquis la syntaxe des appels de splice et que ces derniers sont similaires.
+-   Découverte de Array.reverse pour inverser l'ordre des valeurs d'un tableau. Après quelques erreurs je prends note qu'il faut encore affecter le nouveau tableau créé, cette méthode ne modifiant pas l'élément en profondeur.
+-   Découverte de la méthode concat qui sera désormais toujours privilégiée à push car la concaténation est un outil plus puissant et qui peut s'appliquer à des tableaux comme à des chaînes de caractères. Avec concat néanmoins, il faut toujours affecter à une variable le nouvel objet.
+
+---
+
+## **_--- Jours 6 à 25 : Work In Progress, le ReadMe sera finalisé avant le samedi 21 janvier midi ---_**
 
