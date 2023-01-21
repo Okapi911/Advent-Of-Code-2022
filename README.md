@@ -115,8 +115,44 @@ Pour afficher une solution sur votre ordinateur, il vout suffit d'exécuter la c
 -   Première utilisation de toString pour recréer des chaînes à partir de listes, je privilégierai désormais cette syntaxe à join.
 -   Pour éviter des valeurs démesurément grandes en seconde partie, on ne garde les valeurs de stress en fin de tour que modulo le produit de tous les paliers conditionnels des singes.
 
+## **_--- [Day 12: "Hill Climbing Algorithm"](https://adventofcode.com/2022/day/12) ---_**
+
+-   [Ma solution](./2022/day12/day12.ts)
+-   Lors du formattage je repère immédiatement les positions d'intérêt pour les deux parties : source, arrivée, et tous les 'a'.
+-   Je mets alors en place une variante de l'algorithme du plus court chemin : en partant de l'arrivée (ou d'un autre point par la suite), je le supprime des points à explorer, je l'ajoute aux points explorés, je vérifie pour chacun de ses voisins si je peux l'emprunter (conditions d'escalade mais dans le sens inverse : je peux monter autant que je veux, mais descendre de max 1), si cela a déjà été fait (grâce au set des explorés) et si le parcours couramment en cours d'étude est plus court (grâce à un dictionnaire). Si ces conditions sont vérifiées, j'update l'entrée dans le dictionnaire et ajoute le point dans l'ensemble de ceux à explorer. Je recommence alors au point suivant jusqu'à avoir vidé les points à explorer.
+
+## **_--- [Day 13: "Distress Signal"](https://adventofcode.com/2022/day/13) ---_**
+
+-   [Ma solution](./2022/day13/day13.ts)
+-   Après quelques difficultés pour essayer de parser les données du jour, j'ai fait quelques recherches de documentation et ai découvert JSON.parse, qui trivialise ce formattage. Le problème du jour n'est alors que la mise en place d'une fonction de comparaison particulière sur des listes imbriquées, qui profite d'appels récursifs pour prendre en compte la profondeur inconnue du tableau.
+
+---
+
+## **_--- [Day 14: "Regolith Reservoir"](https://adventofcode.com/2022/day/14) ---_**
+
+-   [Ma solution](./2022/day14/day14.ts)
+-   La première partie de l'exercice consiste à mettre en place une fonction traçant effectivement les murs indiqués dans l'input dans un espace non borné. Pour cela on ajoute chaque position de mur dans un ensemble, et on conserve de côté les valeurs extrêmes de l'espace présenant des murs.
+-   La chûte de sable est alors simple à simuler en vérifiant à chaque fois quel mouvement est possible en premier, en l'effectuant si possible ou en passant au grain suivant si aucun mouvement n'est possible.
+-   Avec les fonctions de la première partie, on peut créer le mur "infini" tel que souhaité et indiquer la condition d'arrêt voulue sans problème supplémentaire.
+
+---
+
+## **_--- [Day 15: "Beacon Exclusion Zone"](https://adventofcode.com/2022/day/15) ---_**
+
+-   [Ma solution](./2022/day15/day15.ts)
+-   Premier échec de cet advent of code, je n'ai pas réussi à implémenter un programme fonctionnant sans erreur pour trouver le nombre de positions possibles sur la ligne en partie 1, bien que fonctionnant sur l'exemple, et sur quelques inputs un peu plus gros que j'ai traités simultanément sur ordinateur et à la main pour confirmer. Je ne me suis pas renseigné sur les moyens de mettre en place cet exercice car j'espère toujours pouvoir y revenir par la suite.
+
+---
+
+## **_--- [Day 18: "Boiling Boulders"](https://adventofcode.com/2022/day/18) ---_**
+
+-   [Ma solution](./2022/day18/day18.ts)
+-   Mon échec au jour 15 m'a grandement fait perdre en motivation au moment où la difficulté des problèmes était quant-à-elle croissante. De ce fait, et également pour des raisons personnelles sur cette deuxième partie du mois, à partir de ce point les exercices n'ont plus été traités le jour de leur parution.
+-   La première partie de l'exercice est immédiate : pour chaque cube de l'input on vérifie pour chacun de ses 6 voisins directs s'il est occuppé par de l'air (par opposition à de la lave) et si c'est le cas on incrémente de 1 le résultat.
+-   Pour la seconde partie, on détermine les coins du pavé droit contenant la goutte et on détermine par un algorithme de proche en proche en partant de cette bordure quelles sont les positions de tous les blocs d'air accessibles par la vapeur. En reprenant la fonction de comptage de l'exercice 1, il faut maintenant ajouter la condition que le compteur ne s'incrémente que si le bloc d'air au contact est accessible pour la vapeur.  
+
 ---
 
 
-## **_--- Jours 12 à 25 : Work In Progress, le ReadMe sera finalisé avant le samedi 21 janvier midi ---_**
+## **_--- Jours 20 à 25 : Work In Progress, le ReadMe sera finalisé avant le samedi 21 janvier midi ---_**
 
