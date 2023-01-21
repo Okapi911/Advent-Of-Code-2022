@@ -153,6 +153,38 @@ Pour afficher une solution sur votre ordinateur, il vout suffit d'exécuter la c
 
 ---
 
+## **_--- [Day 20: "Grove Positioning System"](https://adventofcode.com/2022/day/20) ---_**
 
-## **_--- Jours 20 à 25 : Work In Progress, le ReadMe sera finalisé avant le samedi 21 janvier midi ---_**
+-   [Ma solution](./2022/day20/day20.ts)
+-   La seule difficulté de l'exercice est de tenir compte de la présence de doublons dans le véritable input même si les consignes n'en évoquent nulle part la possibilité. Pour cela je travaille avec des string indiquant le nombre puis le numéro de l'occurence en question séparés par //. Ainsi chaque élément a un identifiant unique.
+-   Pour s'assurer de n'agir sur un nombre qu'une seule fois dans le tour, on modifie une copie séparée (adresse différente) de la liste en itérant cependant les valeurs depuis la liste initiale.
 
+## **_--- [Day 22: "Monkey Map"](https://adventofcode.com/2022/day/22) ---_**
+
+-   [Ma solution](./2022/day22/day22.ts)
+-   Par manque de temps je ne me suis intéressé qu'à la partie 1 de cet exercice. Je compte néanmoins finaliser cet exercice en janvier si j'y parviens.
+-   La difficulté de l'exercice est surtout de comprendre comment formatter les données et comment appliquer les consignes de mouvements au travers de javascript. Afin de vous expliquer ma démarche, j'ai laissé mes commentaires d'organisation en début de fichier pour votre lecture.
+-   Pas de problèmes particuliers en opérant pas à pas après avoir déterminé les limites de mouvements sur chaque ligne et colonne (murs et bords).
+
+---
+
+## **_--- [Day 23: "Unstable Diffusion"](https://adventofcode.com/2022/day/23) ---_**
+
+-   [Ma solution](./2022/day23/day23.ts)
+-   Un problème très intéressant sur des mouvements conditionnés différemment à chaque tour. Ne cherchant pas à avoir un aspect graphique du potager à afficher à aucun moment, j'ai pris l'initiative de ne retenir les positions des elfes qu'au travers d'un set, ce qui me permet également de ne pas avoir de bordures comme c'aurait été le cas dans un tableau.
+-   Je stocke dans deux sets les positions actuelles et celles voulues par les elfes. Dans un dictionnaire dont les clés sont les positions voulues, j'indique pour chaque entrée la liste des elfes intéressés par cette case. Ainsi si cette liste est de longueur 1 j'autorise le mouvement, sinon les elfes sont renvoyés à leur position actuelle.
+-   Pour la partie 2, il s'agit de réaliser au bon moment une sauvegarde en mémoire des positions occuppées au tour précédent, et d'utiliser des types facilement comparables (ici j'ai comparé les états du jeu comme des chaînes de caractères.
+
+---
+
+## **_--- [Day 25: "Full of Hot Air"](https://adventofcode.com/2022/day/25) ---_**
+
+-   [Ma solution](./2022/day25/day25.ts)
+-   Du fait de l'organisation particulière de cette journée, je n'ai pu obtenir que la première étoile même si l'intégralité du problème a été traité.
+-   Comme la difficulté du problème était très faible, j'ai opté de faire un code très lisible et passant par les mêmes étapes que le cerveau humain : de base 10 à base 5 tout d'abord pour mieux se représenter le nombre, puis de base 5 à snafu. Un procédé direct aurait également été simple à mettre en place en fusionnant les codes de ces deux fonctions.
+
+---
+
+## **_--- BILAN ---_**
+
+L'advent of code 2022 était une très bonne expérience à laquelle je suis heureux d'avoir pu participer. Les problèmes étaient intéressant, et très formatteurs pour l'apprentissage d'un nouveau langage. TypeScript m'est désormais très agréable à utiliser, et je pense le privilégier quand j'aurai besoin de faire de la programmation fonctionnelle. J'ai pour ambition de finir tous les problèmes qui me manquent avant décembre 2023, pour commencer sur de bonnes bases le prochain advent of code, que je souhaite réaliser dans sa totalité (et dans les temps) si mon emploi du temps me le permet.
